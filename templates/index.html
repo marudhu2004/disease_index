@@ -1,11 +1,52 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <title>Diseases</title>
+    <title>Diseases index</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: auto;
+            margin-top: 25px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #heading {
+            text-align: center;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            padding: auto;
+            margin-top: 100px;
+        }
+        .body {
+            background: #000;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Diseases</h1>
+    <h1 id="heading">Desease</h1>
     <table>
         <thead>
             <tr>
@@ -15,13 +56,18 @@
         </thead>
         <tbody>
             {% for disease in diseases %}
-                <tr>
-                    <td><a href="{{ url_for('disease', disease_id=disease['id']) }}">{{ disease['name'] }}</a></td>
-                    <td>{{ disease['category'] }}</td>
-                </tr>
+            <tr>
+                <td><a href="{{ url_for('disease', disease_id=disease['id']) }}">{{ disease['name'] }}</a></td>
+                <td>{{ disease['category'] }}</td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
-    <a href="{{ url_for('add_disease') }}">Add New Disease</a>
+    <div class="button-container">
+    <a class="btn btn-primary" href="{{ url_for('add_disease') }}" role="button">Add New Disease</a>
+
+    </div>
+    <!-- <button type="button" class="btn btn-primary"><a href="{{ url_for('add_disease') }}">Add New Disease</a></button> -->
 </body>
+
 </html>

@@ -1,17 +1,63 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Add Disease</title>
+  <meta charset="utf-8">
+  <title>Add Disease</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    .container {
+      width: 400px;
+      margin: 50px auto;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #4CAF50; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
     <h1>Add Disease</h1>
     <form method="post">
+      <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name">
+      </div>
+      <div class="form-group">
         <label for="category">Category</label>
         <input type="text" id="category" name="category">
-        <button type="submit">Add</button>
+      </div>
+      <button type="submit">Add</button>
     </form>
+  </div>
 </body>
 </html>

@@ -1,45 +1,84 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>{{ disease['name'] }}</title>
+  <meta charset="utf-8">
+  <title>{{ disease['name'] }}</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    .container {
+      width: 700px; /* Adjust width as needed */
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    h1, h2, h3 {
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 5px;
+    }
+    a {
+      color: #333;
+      text-decoration: none;
+      padding: 5px 10px;
+      background-color: #007bff; /* Blue background */
+      color: white; /* White text */
+      border: none;
+      border-radius: 3px;
+      margin: 10px 5px;
+      display: inline-block; /* Ensures buttons stay on a single line */
+    }
+    a:hover {
+      background-color: #33b5ff; /* Light blue hover effect */
+    }
+  </style>
 </head>
 <body>
+  <div class="container">
     <h1>{{ disease['name'] }}</h1>
     <p>Category: {{ disease['category'] }}</p>
     <h2>Details</h2>
     <h3>Causes</h3>
     <ul>
-        {% for cause in causes %}
-            <li>{{ cause['cause'] }}</li>
-        {% endfor %}
+      {% for cause in causes %}
+        <li>{{ cause['cause'] }}</li>
+      {% endfor %}
     </ul>
     <h3>Symptoms</h3>
     <ul>
-        {% for symptom in symptoms %}
-            <li>{{ symptom['symptom'] }}</li>
-        {% endfor %}
+      {% for symptom in symptoms %}
+        <li>{{ symptom['symptom'] }}</li>
+      {% endfor %}
     </ul>
     <h3>Prevention</h3>
     <ul>
-        {% for prevent in prevention %}
-            <li>{{ prevent['prevention'] }}</li>
-        {% endfor %}
+      {% for prevent in prevention %}
+        <li>{{ prevent['prevention'] }}</li>
+      {% endfor %}
     </ul>
     <h3>Cure</h3>
     <ul>
-        {% for c in cure %}
-            <li>{{ c['cure'] }}</li>
-        {% endfor %}
+      {% for c in cure %}
+        <li>{{ c['cure'] }}</li>
+      {% endfor %}
     </ul>
     <h3>Specialists</h3>
     <ul>
-        {% for specialist in specialists %}
-            <li>{{ specialist['specialist'] }}</li>
-        {% endfor %}
+      {% for specialist in specialists %}
+        <li>{{ specialist['specialist'] }}</li>
+      {% endfor %}
     </ul>
     <a href="{{ url_for('add_info', disease_id=disease['id']) }}">Add Information</a>
     <br>
     <a href="{{ url_for('index') }}">Back to Diseases List</a>
+  </div>
 </body>
 </html>
