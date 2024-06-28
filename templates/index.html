@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Diseases</title>
+</head>
+<body>
+    <h1>Diseases</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for disease in diseases %}
+                <tr>
+                    <td><a href="{{ url_for('disease', disease_id=disease['id']) }}">{{ disease['name'] }}</a></td>
+                    <td>{{ disease['category'] }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{{ url_for('add_disease') }}">Add New Disease</a>
+</body>
+</html>
