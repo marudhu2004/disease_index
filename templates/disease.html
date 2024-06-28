@@ -8,15 +8,36 @@
     <h1>{{ disease['name'] }}</h1>
     <p>Category: {{ disease['category'] }}</p>
     <h2>Details</h2>
-    {% if info %}
-        <p><strong>Causes:</strong> {{ info['causes'] }}</p>
-        <p><strong>Symptoms:</strong> {{ info['symptoms'] }}</p>
-        <p><strong>Prevention:</strong> {{ info['prevention'] }}</p>
-        <p><strong>Cure:</strong> {{ info['cure'] }}</p>
-        <p><strong>Specialists:</strong> {{ info['specialists'] }}</p>
-    {% else %}
-        <p>No additional information available.</p>
-    {% endif %}
+    <h3>Causes</h3>
+    <ul>
+        {% for cause in causes %}
+            <li>{{ cause['cause'] }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Symptoms</h3>
+    <ul>
+        {% for symptom in symptoms %}
+            <li>{{ symptom['symptom'] }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Prevention</h3>
+    <ul>
+        {% for prevent in prevention %}
+            <li>{{ prevent['prevention'] }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Cure</h3>
+    <ul>
+        {% for c in cure %}
+            <li>{{ c['cure'] }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Specialists</h3>
+    <ul>
+        {% for specialist in specialists %}
+            <li>{{ specialist['specialist'] }}</li>
+        {% endfor %}
+    </ul>
     <a href="{{ url_for('add_info', disease_id=disease['id']) }}">Add Information</a>
     <br>
     <a href="{{ url_for('index') }}">Back to Diseases List</a>

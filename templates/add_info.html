@@ -5,18 +5,18 @@
     <title>Add Information</title>
 </head>
 <body>
-    <h1>Add Information for {{ disease['name'] }}</h1>
+    <h1>Add Information for Disease ID {{ disease_id }}</h1>
     <form method="post">
         <label for="causes">Causes</label>
-        <textarea id="causes" name="causes"></textarea>
+        <input type="text" id="causes" name="causes">
         <label for="symptoms">Symptoms</label>
-        <textarea id="symptoms" name="symptoms"></textarea>
+        <input type="text" id="symptoms" name="symptoms">
         <label for="prevention">Prevention</label>
-        <textarea id="prevention" name="prevention"></textarea>
+        <input type="text" id="prevention" name="prevention">
         <label for="cure">Cure</label>
-        <textarea id="cure" name="cure"></textarea>
+        <input type="text" id="cure" name="cure">
         <label for="specialists">Specialists</label>
-        <textarea id="specialists" name="specialists"></textarea>
+        <input type="text" id="specialists" name="specialists">
         <button type="submit">Add</button>
     </form>
 </body>
